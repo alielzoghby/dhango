@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {%block content%}
+<form class="ff form-group container my-5" method="POST">
+  {% csrf_token %}
+  <table>
+    {{form.as_p}}
+
+    <button type="submit" class="btn btn-primary">create item Todo</button>
+  </table>
+</form>
+{%endblock content%}

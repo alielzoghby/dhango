@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% load bootstrap5 %} {% bootstrap_css %} {%
+bootstrap_javascript %} {% block content %}
+
+<h1 class="mt-5 text-warning" style="text-align: center">Sign UP</h1>
+
+<div class="container d-flex justify-content-center w-50">
+  <form method="POST" class="form-control">
+    {% csrf_token %} {% bootstrap_form form %}
+
+    <button class="btn btn-primary rounded my-4 mx-auto" type="submit">
+      Sign-Up
+    </button>
+  </form>
+</div>
+{% endblock %}

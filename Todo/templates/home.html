@@ -1,0 +1,36 @@
+{% extends 'base.html'%} {%block content%}
+
+<form method="GET" class="mt-5 mb-5">
+  <div class="mt-3 p-1 w-25 ms-5 fw-bold d-inline">
+    {{ filter.form }}
+
+    <button
+      class="fw-bold rounded w-auto text-light text-bg-primary"
+      type="submit"
+    >
+      Filter
+    </button>
+  </div>
+</form>
+
+<div class="container d-flex flex-row-reverse my-5 gap-2">
+  <a href="{% url 'createitems' %}" class="btn btn-primary">create item Todo</a>
+
+  <a href="{% url 'create' %}" class="btn btn-primary">create Todo</a>
+</div>
+<ul lass="list-group ">
+  {% for todo in todos %}
+  <li
+    class="list-group-item d-flex align-items-center justify-content-between w-50 mx-auto bg-light p-2"
+  >
+    <a class="" href="{% url 'detailed' todo.id %}"> {{ todo.name }} </a>
+    <div>
+      <a class="btn btn-info" href="{% url 'update' todo.id %}"> update </a>
+      <a class="btn btn-danger" href="{% url 'delete' todo.id %}"> delete </a>
+    </div>
+  </li>
+  {% empty %}
+  <li>No Todos</li>
+  {% endfor %}
+</ul>
+{%endblock content %}

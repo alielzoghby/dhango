@@ -1,0 +1,7 @@
+{%extends 'base.html'%} {%block content%} {% for todo in items %}
+<li
+  class="list-group-item my-5 d-flex align-items-center justify-content-center w-50 mx-auto bg-light p-2"
+>
+  <a class="" href="{% url 'detailed' todo.id %}"> {{ todo.name }} </a>
+</li>
+{% endfor %} {%endblock%}
